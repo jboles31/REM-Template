@@ -10,7 +10,7 @@ class App extends React.Component{
   constructor(props) {
     super(props)
     this.state = {
-      example: ''
+      example: []
     }
 
     this.search = this.search.bind(this)
@@ -48,11 +48,11 @@ class App extends React.Component{
           <img className="background" src={Background} ></img>
         </div>
         <div className="comps-wrapper">
-          <Container 
-            search={this.search}
-          />
-          <Display 
+          <Header 
             example={this.state.example}
+            />
+          <Display 
+            search={this.search}
           />
         </div>        
       </div>

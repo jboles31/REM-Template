@@ -1,7 +1,7 @@
 require('dotenv').config();
 var express = require('express');
-var mongoose = require('mongoose');
-var db = require('../database-mongo/index');
+// var mongoose = require('mongoose');
+// var db = require('../db/index'); 
 var axios = require('axios');
 
 var app = express();
@@ -40,11 +40,16 @@ app.get('/info', (req, res) => {
   })
 })
 
-mongoose.connect('mongodb://localhost/movies', {useNewUrlParser: true}, (err) => {
-  if (err) { throw error }
-  app.listen(PORT, function() {
-    console.log(`listening on port ${process.env.PORT}`);
-  });
+// mongoose.connect('mongodb://localhost/movies', {useNewUrlParser: true}, (err) => {
+//   if (err) { throw error }
+//   app.listen(PORT, function() {
+//     console.log(`listening on port ${process.env.PORT}`);
+//   });
+// });
+
+app.listen(process.env.PORT, function() {
+  console.log(`listening on port ${process.env.PORT}`);
 });
+
 
 
